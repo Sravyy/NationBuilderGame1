@@ -23,8 +23,5 @@ namespace NationBuilderGame.Models
             Id = id;
         }
 
-        public Nation()
-        {
-        }
     }
 }

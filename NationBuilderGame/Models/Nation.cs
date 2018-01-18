@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -20,7 +22,7 @@ namespace NationBuilderGame.Models
         public int GovernmentId { get; set; }
         public int EconomyId { get; set; }
 
-        public Nation(string name, int capital = 10000, int stability = 100, int resources = 10000, int governmentid, int economyid,  int id = 0)
+        public Nation(string name, int governmentid, int economyid, int capital = 10000, int stability = 100, int resources = 10000,   int id = 0)
         {
             Name = name;
             Capital = capital;
@@ -33,6 +35,7 @@ namespace NationBuilderGame.Models
 
         public Nation()
         {
+           
         }
     }
 }
