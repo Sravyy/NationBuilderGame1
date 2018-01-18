@@ -2,9 +2,9 @@
 /Users/Guest/Projects/NationBuilderGame/NationBuilderGame/bin/Debug/netcoreapp1.1/NationBuilderGame.runtimeconfig.json
 /Users/Guest/Projects/NationBuilderGame/NationBuilderGame/bin/Debug/netcoreapp1.1/NationBuilderGame.runtimeconfig.dev.json
 /Users/Guest/Projects/NationBuilderGame/NationBuilderGame/obj/Debug/netcoreapp1.1/NationBuilderGame.csprojResolveAssemblyReference.cache
-/Users/Guest/Projects/NationBuilderGame/NationBuilderGame/obj/Debug/netcoreapp1.1/NationBuilderGame.csproj.CoreCompileInputs.cache
 /Users/Guest/Projects/NationBuilderGame/NationBuilderGame/obj/Debug/netcoreapp1.1/NationBuilderGame.AssemblyInfo.cs
 /Users/Guest/Projects/NationBuilderGame/NationBuilderGame/bin/Debug/netcoreapp1.1/NationBuilderGame.dll
 /Users/Guest/Projects/NationBuilderGame/NationBuilderGame/bin/Debug/netcoreapp1.1/NationBuilderGame.pdb
 /Users/Guest/Projects/NationBuilderGame/NationBuilderGame/obj/Debug/netcoreapp1.1/NationBuilderGame.dll
 /Users/Guest/Projects/NationBuilderGame/NationBuilderGame/obj/Debug/netcoreapp1.1/NationBuilderGame.pdb
+/Users/Guest/Projects/NationBuilderGame/NationBuilderGame/obj/Debug/netcoreapp1.1/NationBuilderGame.csproj.CoreCompileInputs.cache

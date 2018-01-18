@@ -1,12 +1,68 @@
 ﻿@{
-    ViewData["Title"] = "Nation Builder";
+    ViewData["Title"] = "Nation Builder Game";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
   <html xmlns="http://www.w3.org/1999/xhtml">
-      <head>
-        <title>AJAX Demo</title>
-      </head>
+  <head>
+    <title>Nation Builder Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.new-country').submit(function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: '@Url.Action("NewCountry")',
+                type: 'POST',
+                dataType: 'json',
+                data: $(this).serialize(),
+                success: function (result) {
+                    var resultMessage = 'You\'ve added a new country to the database!<br>Name: ' + result.name + 
+			'<br>Capital: $'+result.capital+ 
+			'<br> Stability: '+result.stability + 
+			'% <br>Resources: '+ result.resources + ' units';
+                    $('#createCountry').html(resultMessage);
+                    $('.new-country').hide('');
+                }
+            });
+        });
 
-  </html>
+			
+      });
+    </script>
+        
+  </head>
+  <body>
+        <div class="container-fluid">
+            <div class="well">
+                <h2>Nation Builder Game</h2>
+            </div>
+
+
+            <div class="well">
+                <h2>Create Your Nation</h2>
+                <form action="NewCountry" class="new-country">
+                    <label for="countryName">Country Name: </label>
+                    <input class="form-control" style="width: 300px" id="countryName" type="text" name="countryName" />
+                    <label for="governmentId">Government Type: </label>
+					<select class="form-control" style="width: 300px" name="governmentId">
+						<option value="1">Democracy</option>
+						<option value="2">Monarchy</option>
+					</select>
+					<label for="economyId">Economy Type: </label>
+                    <select class="form-control" style="width: 300px" name="economyId">
+                        <option value="1">Capitalism</option>
+                        <option value="2">Socialism</option>
+                    </select>
+                    <br>
+                    <button class="btn btn-info" type="submit">Submit</button>
+                </form>
+                <div id="createCountry"></div>
+            </div>
+                
+            
+
+        </div>
+</body>
+</html>

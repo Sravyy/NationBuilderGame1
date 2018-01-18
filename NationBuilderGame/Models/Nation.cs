@@ -37,5 +37,52 @@ namespace NationBuilderGame.Models
         {
            
         }
+
+        //public int GetRandomEvent()
+        //{
+        //    //1: Market Crash
+        //    //2: New Tech Launched
+        //}
+
+        //public GetCountryImpact()
+        //{
+            //int eventId = GetRandomEvent();
+
+            ////if Market crash
+            //if (eventId == 1)
+            //{
+            //    //Capitalism
+            //    if (EconomyId == 1)
+            //    {
+            //        // Capital reduces by 40%
+            //        // Resources increase  by 20%
+            //        // Stability reduces by 50%
+            //    }
+            //    //Socialism
+            //    else if (EconomyId == 2)
+            //    {
+            //        // Capital reduces by 20%
+            //        // Resources increase by 15%
+            //        // Stability reduces by 10%
+            //    }
+            //} //if New Technology
+            //else if(eventId == 2)
+            //    {
+            //        //if Democracy
+            //        if( GovernmentId == 1)
+            //        {
+            //            // Capital increases by 20%
+            //            // Stability increases by 30%
+            //            // Resources decrease by 10%
+            //        }
+            //    //if Socialism
+            //    else if (GovernmentId == 2)
+            //        {
+            //            // Capital increases by 10%
+            //            // Stability increases by 10%
+            //            // Resources decrease by 5%
+            //        }
+            //    }
+            //}
     }
 }

@@ -23,5 +23,8 @@ namespace NationBuilderGame.Models
             Id = id;
         }
 
+        public Event()
+        {
+        }
     }
 }
