@@ -25,9 +25,9 @@ namespace NationBuilderGame.Controllers
         {
             Console.WriteLine("Hello we have reached New Country");
             Nation newNation = new Nation(countryName, governmentId, economyId);
-            Event MarketCrash = new Event("MarketCrash");
-            Event NewTechnology = new Event("NewTechnology");
-            Event NothingHappens = new Event("NothingHappens");
+            Event MarketCrash = new Event("Market Crash");
+            Event NewTechnology = new Event("New Technology Released");
+            Event NothingHappens = new Event("Nothing");
             db.Events.Add(MarketCrash);
             db.Events.Add(NewTechnology);
             db.Events.Add(NothingHappens);
@@ -35,6 +35,15 @@ namespace NationBuilderGame.Controllers
             db.SaveChanges();
             return Json(newNation);
         }
+
+        public IActionResult RandomEvent()
+        {
+            
+            var randomEvent = db.Events.Take(1);
+
+            return Json(randomEvent);
+        }
+      
 
     }
 }

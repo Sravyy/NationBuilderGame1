@@ -18,10 +18,10 @@
                 dataType: 'json',
                 data: $(this).serialize(),
                 success: function (result) {
-                    var resultMessage = 'You\'ve added a new country to the database!<br>Country Name: ' + result.name + 
-			'<br>Capital: $'+result.capital+ 
-			'<br> Stability: '+result.stability + 
-			'% <br>Resources: '+ result.resources + ' units';
+                    var resultMessage = 'You\'ve added a new country to the database!<ul><li>Country Name: ' + result.name + 
+			'</li><li>Capital: $'+result.capital+ 
+			'</li><li>Stability: '+result.stability + 
+			'% </li><li>Resources: '+ result.resources + ' units</li></ul>';
                     $('#createCountry').html(resultMessage);
                     $('.new-country').hide('');
 			        $('.game-class').show();
@@ -29,17 +29,18 @@
             });
         });
 
-		$('.start-game').click(function () {
-          $.ajax({
-            type: 'GET',
-            dataType: 'json',
-            contentType: 'application/json',
-            url: '@Url.Action("DisplayObject")',
-            success: function (result) {
-              var resultString = 'Id: ' + result.id + '<br>City: ' + result.city + '<br>Country: ' + result.country;
-              $('#result3').html(resultString);
-            }
-          });
+		$('.game-class').click(function() {
+            $.ajax({
+                url: '@Url.Action("RandomEvent")',
+                type: 'GET',
+			    data: $(this).serialize(),
+                dataType: 'json',
+                success: function (result) {
+			        console.log(result[0].name);
+                    var stringResult = result.name;
+                    $('#randomEvent').html(stringResult);
+                }
+            });
         });
 			
       });
@@ -74,7 +75,12 @@
             </div>
                 
             <div class="game-class" style="Display: None;">
-                <button class="btn btn-default play-game" >Start Game</button>
+                <button class="btn btn-default play-game" type="click" >Start Game</button>
+			</div>
+
+			<div class="display-random-event">
+                <h3>Attention! </h3>
+				<div id="randomEvent"></div>
 			</div>
 
         </div>
