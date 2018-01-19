@@ -25,6 +25,12 @@ namespace NationBuilderGame.Controllers
         {
             Console.WriteLine("Hello we have reached New Country");
             Nation newNation = new Nation(countryName, governmentId, economyId);
+            Event MarketCrash = new Event("MarketCrash");
+            Event NewTechnology = new Event("NewTechnology");
+            Event NothingHappens = new Event("NothingHappens");
+            db.Events.Add(MarketCrash);
+            db.Events.Add(NewTechnology);
+            db.Events.Add(NothingHappens);
             db.Nations.Add(newNation);
             db.SaveChanges();
             return Json(newNation);

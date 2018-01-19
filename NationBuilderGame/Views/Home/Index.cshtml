@@ -18,16 +18,29 @@
                 dataType: 'json',
                 data: $(this).serialize(),
                 success: function (result) {
-                    var resultMessage = 'You\'ve added a new country to the database!<br>Name: ' + result.name + 
+                    var resultMessage = 'You\'ve added a new country to the database!<br>Country Name: ' + result.name + 
 			'<br>Capital: $'+result.capital+ 
 			'<br> Stability: '+result.stability + 
 			'% <br>Resources: '+ result.resources + ' units';
                     $('#createCountry').html(resultMessage);
                     $('.new-country').hide('');
+			        $('.game-class').show();
                 }
             });
         });
 
+		$('.start-game').click(function () {
+          $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            contentType: 'application/json',
+            url: '@Url.Action("DisplayObject")',
+            success: function (result) {
+              var resultString = 'Id: ' + result.id + '<br>City: ' + result.city + '<br>Country: ' + result.country;
+              $('#result3').html(resultString);
+            }
+          });
+        });
 			
       });
     </script>
@@ -38,7 +51,6 @@
             <div class="well">
                 <h2>Nation Builder Game</h2>
             </div>
-
 
             <div class="well">
                 <h2>Create Your Nation</h2>
@@ -61,7 +73,9 @@
                 <div id="createCountry"></div>
             </div>
                 
-            
+            <div class="game-class" style="Display: None;">
+                <button class="btn btn-default play-game" >Start Game</button>
+			</div>
 
         </div>
 </body>
